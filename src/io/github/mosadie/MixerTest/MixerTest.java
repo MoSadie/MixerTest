@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.fluent.Content;
@@ -15,13 +14,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.google.common.eventbus.Subscribe;
 import com.mixer.api.MixerAPI;
 import com.mixer.interactive.GameClient;
-import com.mixer.interactive.event.control.input.ControlInputEvent;
-import com.mixer.interactive.event.control.input.ControlMouseDownInputEvent;
-import com.mixer.interactive.event.control.input.ControlMouseUpInputEvent;
-import com.mixer.interactive.event.control.input.ControlMoveInputEvent;
 
 public class MixerTest {
 
@@ -85,7 +79,6 @@ public class MixerTest {
 							ResponseHandler<String> rh = new ResponseHandler<String>() {
 								public String handleResponse(HttpResponse response)
 										throws ClientProtocolException, IOException {
-									StatusLine statusLine = response.getStatusLine();
 									HttpEntity entity = response.getEntity();
 									if (entity == null) {
 										throw new ClientProtocolException("Response contains no content");

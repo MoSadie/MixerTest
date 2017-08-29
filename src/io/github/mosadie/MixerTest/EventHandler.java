@@ -7,6 +7,7 @@ import com.mixer.interactive.event.control.input.ControlMouseUpInputEvent;
 import com.mixer.interactive.event.control.input.ControlMoveInputEvent;
 
 public class EventHandler {
+	
 	@Subscribe
 	public void TheOneThatWorks(ControlInputEvent event) {
 		System.out.println("Control Input Event posted! ControlID: "+event.getControlInput().getControlID());
