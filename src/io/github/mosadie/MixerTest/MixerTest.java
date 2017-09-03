@@ -100,7 +100,7 @@ public class MixerTest {
 							mixer = new MixerAPI(OAuth);
 							System.out.println("Setup of Mixer API finished!");
 							gameClient = new GameClient(109628);
-							gameClient.connect(OAuth);
+							gameClient.connect(OAuth,"5owte2yt");
 							gameClient.getEventBus().register(new EventHandler()); //This is where the class is registered.
 							gameClient.ready(true);
 							System.out.println("Setup of Game Client finished!");
